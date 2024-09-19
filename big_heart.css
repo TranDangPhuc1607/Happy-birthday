@@ -5,7 +5,6 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #121212;
-    /* Dark background for contrast */
     overflow: hidden;
     flex-direction: column;
 }
@@ -15,9 +14,18 @@ body {
     width: 120px;
     height: 120px;
     background-color: #ff6b6b;
-    /* Soft pink */
     transform: rotate(-45deg);
     z-index: 1;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    cursor: pointer;
+    /* Change cursor to pointer to indicate clickability */
+}
+
+.heart:hover {
+    background-color: #ff4757;
+    /* Slightly darker shade on hover */
+    transform: rotate(-45deg) scale(1.1);
+    /* Slightly larger on hover */
 }
 
 .heart::before,
@@ -28,7 +36,6 @@ body {
     height: 120px;
     border-radius: 50%;
     background-color: #ff6b6b;
-    /* Soft pink */
 }
 
 .heart::before {
@@ -59,7 +66,6 @@ body {
     width: 4px;
     height: 4px;
     background-color: #f9ca24;
-    /* Golden yellow */
     border-radius: 50%;
     opacity: 0;
     animation: explode 1.2s ease-out infinite;
@@ -70,7 +76,6 @@ body {
     width: 2px;
     height: 2px;
     background-color: #ffbe76;
-    /* Soft gold */
     border-radius: 50%;
     opacity: 0;
     animation: sparkle 1.5s ease-out infinite;
@@ -81,7 +86,6 @@ body {
     width: 4px;
     height: 4px;
     background-color: #1abc9c;
-    /* Teal */
     border-radius: 50%;
     opacity: 0;
     animation: ripple 2.5s ease-out infinite;
@@ -92,9 +96,11 @@ body {
     margin-top: 20px;
     font-size: 2.5em;
     color: #f1c40f;
-    /* Bright gold */
     z-index: 2;
-    animation: fadeIn 2s forwards;
+    animation: fadeIn 2.5s forwards;
+    animation-delay: 5s;
+    /* Delay the appearance of the message */
+    opacity: 0;
 }
 
 @keyframes explode {

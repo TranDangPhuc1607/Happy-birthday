@@ -10,11 +10,21 @@
 </head>
 
 <body>
+    <!-- Heart animation and fireworks container -->
     <div class="heart" id="heart"></div>
     <div class="fireworks" id="fireworks"></div>
     <div class="sparkles" id="sparkles"></div>
     <div class="ripples" id="ripples"></div>
-    <div class="message" id="message">HAPPY BIRTHDAY MRS.LITTLE</div>
+
+    <!-- Message (Initially hidden) -->
+    <div class="message" id="message" style="display: none;">HAPPY BIRTHDAY MRS.LITTLE</div>
+
+    <!-- YouTube Video for Background Music (Initially muted) -->
+    <iframe id="bg-music" width="0" height="0"
+        src="https://www.youtube.com/embed/Wu8NeFXaoOc?autoplay=1&loop=1&playlist=Wu8NeFXaoOc&mute=1" frameborder="0"
+        allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <!-- Link to external JavaScript file -->
     <script src="./big_heart.js"></script>
 </body>
 

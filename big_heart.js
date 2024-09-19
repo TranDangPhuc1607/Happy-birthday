@@ -1,17 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        document.getElementById('fireworks').style.display = 'block';
-        createFireworks();
-        document.getElementById('sparkles').style.display = 'block';
-        createSparkles();
-        document.getElementById('ripples').style.display = 'block';
-        createRipples();
+    // Event listener for touching the heart
+    document.getElementById('heart').addEventListener('click', function () {
+        // Start animations after the heart is clicked
+        startAnimations();
 
+        // Add a slight delay before unmuting the music and showing the message
         setTimeout(() => {
+            // Unmute music
+            var iframe = document.getElementById('bg-music');
+            var iframeSrc = iframe.src;
+            iframe.src = iframeSrc.replace("mute=1", "mute=0");
+
+            // Show the message with a fade-in effect after a delay
             document.getElementById('message').style.display = 'block';
-        }, 3000); // Show the message 3 seconds after fireworks start
-    }, 2000); // 2 seconds delay before fireworks start
+        }, 1500); // 1.5 seconds delay before the music starts and message appears
+    });
 });
+
+function startAnimations() {
+    document.getElementById('fireworks').style.display = 'block';
+    createFireworks();
+
+    document.getElementById('sparkles').style.display = 'block';
+    createSparkles();
+
+    document.getElementById('ripples').style.display = 'block';
+    createRipples();
+}
 
 function createFireworks() {
     const fireworksContainer = document.getElementById('fireworks');
@@ -54,3 +69,4 @@ function createRipples() {
         ripplesContainer.appendChild(ripple);
     }
 }
+
